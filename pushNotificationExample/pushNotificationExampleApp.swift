@@ -12,7 +12,7 @@ import FirebaseMessaging
 @main
 struct pushNotificationExampleApp: App {
     // register app delegate for Firebase setup
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate // to add
     
     var body: some Scene {
         WindowGroup {
@@ -42,6 +42,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         
         return true
     }
+    
     func application(_ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
       Messaging.messaging().apnsToken = deviceToken;
